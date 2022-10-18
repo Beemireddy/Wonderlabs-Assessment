@@ -2,6 +2,10 @@ package app.bank.domain;
 
 import java.time.LocalDateTime;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
+
+@JsonInclude(Include. NON_NULL)
 public class AccountDetails {
 
 	private long accountNumber;
@@ -12,7 +16,14 @@ public class AccountDetails {
 	private double overDraft;
 	private LocalDateTime createdTime;
 	private String address;
+	private String statusMesg;
 	
+	public String getStatusMesg() {
+		return statusMesg;
+	}
+	public void setStatusMesg(String statusMesg) {
+		this.statusMesg = statusMesg;
+	}
 	public long getAccountNumber() {
 		return accountNumber;
 	}
